@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.2
-pkgrel=2
+pkgrel=3
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -30,27 +30,8 @@ url="https://www.manjaro.org/"
 license=('GPL')
 _kernelver="${pkgver/\./}"
 
-# EOL kernels
+# EOL kernels between last LTS and latest
 eol=(
-	317
-	318
-	319
-	40
-	41
-	42
-	43
-	45
-	46
-	47
-	48
-	410
-	411
-	412
-	413
-	415
-	416
-	417
-	418
 	420
 	50
 )
@@ -131,19 +112,19 @@ package_linux-latest-nvidia(){
 
 package_linux-latest-nvidia-340xx(){
 	pkgdesc="Legacy NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-304xx")
+	depends=("linux${_kernelver}-nvidia-340xx")
 	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-304xx")
-		conflicts+=("linux${kernel}-nvidia-304xx")
+		replaces+=("linux${kernel}-nvidia-340xx")
+		conflicts+=("linux${kernel}-nvidia-340xx")
 	done
 }
 
 package_linux-latest-nvidia-390xx(){
 	pkgdesc="Legacy NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-340xx")
+	depends=("linux${_kernelver}-nvidia-390xx")
 	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-340xx")
-		conflicts+=("linux${kernel}-nvidia-340xx")
+		replaces+=("linux${kernel}-nvidia-390xx")
+		conflicts+=("linux${kernel}-nvidia-390xx")
 	done
 }
 
