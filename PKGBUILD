@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.2
-pkgrel=1
+pkgrel=2
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -32,8 +32,27 @@ _kernelver="${pkgver/\./}"
 
 # EOL kernels
 eol=(
+	317
+	318
+	319
+	40
+	41
+	42
+	43
+	45
+	46
+	47
+	48
+	410
+	411
+	412
+	413
+	415
+	416
+	417
+	418
+	420
 	50
-	51
 )
 
 package_linux-latest() {
@@ -199,3 +218,4 @@ package_linux-latest-zfs(){
 		conflicts+=("linux${kernel}-zfs")
 	done
 }
+
