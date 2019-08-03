@@ -17,6 +17,7 @@ pkgname=(
 	"${pkgbase}-nvidiabl"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rt3562sta"
+	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
 	"${pkgbase}-vhba-module"
 	"${pkgbase}-virtualbox-guest-modules"
@@ -155,6 +156,15 @@ package_linux-latest-rt3562sta(){
 	done
 }
 
+package_linux-latest-rtl8723bu(){
+	pkgdesc="Realtek 8723bu network card kernel module (metapackage)"
+	depends=("linux${_kernelver}-rtl8723bu")
+	for kernel in "${eol[@]}"; do
+		replaces+=("linux${kernel}-rtl8723bu")
+		conflicts+=("linux${kernel}-rtl8723bu")
+	done
+}
+
 package_linux-latest-tp_smapi(){
 	pkgdesc="Modules for ThinkPad's SMAPI functionality (metapackage)"
 	depends=("linux${_kernelver}-tp_smapi")
@@ -199,4 +209,3 @@ package_linux-latest-zfs(){
 		conflicts+=("linux${kernel}-zfs")
 	done
 }
-
