@@ -11,9 +11,11 @@ pkgname=(
 	"${pkgbase}-broadcom-wl"
 	"${pkgbase}-catalyst"
 	"${pkgbase}-ndiswrapper"
-	"${pkgbase}-nvidia"
 	"${pkgbase}-nvidia-340xx"
 	"${pkgbase}-nvidia-390xx"
+	"${pkgbase}-nvidia-418xx"
+	"${pkgbase}-nvidia-430xx"
+	"${pkgbase}-nvidia-435xx"
 	"${pkgbase}-nvidiabl"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rt3562sta"
@@ -102,15 +104,6 @@ package_linux-latest-ndiswrapper(){
 	done
 }
 
-package_linux-latest-nvidia(){
-	pkgdesc="NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia")
-		conflicts+=("linux${kernel}-nvidia")
-	done
-}
-
 package_linux-latest-nvidia-340xx(){
 	pkgdesc="Legacy NVIDIA drivers for Linux (metapackage)"
 	depends=("linux${_kernelver}-nvidia-340xx")
@@ -126,6 +119,37 @@ package_linux-latest-nvidia-390xx(){
 	for kernel in "${eol[@]}"; do
 		replaces+=("linux${kernel}-nvidia-390xx")
 		conflicts+=("linux${kernel}-nvidia-390xx")
+	done
+}
+
+
+package_linux-latest-nvidia-418xx(){
+	pkgdesc="NVIDIA drivers for Linux (metapackage)"
+	depends=("linux${_kernelver}-nvidia-418xx")
+	for kernel in "${eol[@]}"; do
+		replaces+=("linux${kernel}-nvidia-418xx")
+		conflicts+=("linux${kernel}-nvidia-418xx")
+	done
+}
+
+
+package_linux-latest-nvidia-430xx(){
+	pkgdesc="NVIDIA drivers for Linux (metapackage)"
+	depends=("linux${_kernelver}-nvidia-430xx")
+        replaces+=('linux-latest-nvidia')
+	for kernel in "${eol[@]}"; do
+		replaces+=("linux${kernel}-nvidia-430xx")
+		conflicts+=("linux${kernel}-nvidia-430xx")
+	done
+}
+
+
+package_linux-latest-nvidia-435xx(){
+	pkgdesc="NVIDIA drivers for Linux (metapackage)"
+	depends=("linux${_kernelver}-nvidia-435xx")
+	for kernel in "${eol[@]}"; do
+		replaces+=("linux${kernel}-nvidia-435xx")
+		conflicts+=("linux${kernel}-nvidia-435xx")
 	done
 }
 
