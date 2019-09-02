@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.2
-pkgrel=3
+pkgrel=4
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -35,6 +35,7 @@ _kernelver="${pkgver/\./}"
 
 # EOL kernels between last LTS and latest
 eol=(
+	318
 	420
 	50
 )
