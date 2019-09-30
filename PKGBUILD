@@ -38,6 +38,7 @@ eol=(
 	318
 	420
 	50
+	51
 )
 
 package_linux-latest() {
