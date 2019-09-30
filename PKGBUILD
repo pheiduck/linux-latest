@@ -1,8 +1,8 @@
 # Maintainer: Jonathon Fernyhough <jonathon at_manjaro dot.org>
 
 pkgbase=linux-latest
-pkgver=5.2
-pkgrel=4
+pkgver=5.3
+pkgrel=1
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
