@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.3
-pkgrel=1
+pkgrel=2
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -16,6 +16,7 @@ pkgname=(
 	"${pkgbase}-nvidia-418xx"
 	"${pkgbase}-nvidia-430xx"
 	"${pkgbase}-nvidia-435xx"
+	"${pkgbase}-nvidia-440xx"
 	"${pkgbase}-nvidiabl"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rt3562sta"
@@ -134,7 +135,6 @@ package_linux-latest-nvidia-418xx(){
 	done
 }
 
-
 package_linux-latest-nvidia-430xx(){
 	pkgdesc="NVIDIA drivers for Linux (metapackage)"
 	depends=("linux${_kernelver}-nvidia-430xx")
@@ -145,13 +145,21 @@ package_linux-latest-nvidia-430xx(){
 	done
 }
 
-
 package_linux-latest-nvidia-435xx(){
 	pkgdesc="NVIDIA drivers for Linux (metapackage)"
 	depends=("linux${_kernelver}-nvidia-435xx")
 	for kernel in "${eol[@]}"; do
 		replaces+=("linux${kernel}-nvidia-435xx")
 		conflicts+=("linux${kernel}-nvidia-435xx")
+	done
+}
+
+package_linux-latest-nvidia-440xx(){
+	pkgdesc="NVIDIA drivers for Linux (metapackage)"
+	depends=("linux${_kernelver}-nvidia-440xx")
+	for kernel in "${eol[@]}"; do
+		replaces+=("linux${kernel}-nvidia-440xx")
+		conflicts+=("linux${kernel}-nvidia-440xx")
 	done
 }
 
