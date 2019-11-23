@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.3
-pkgrel=2
+pkgrel=3
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -40,6 +40,7 @@ eol=(
 	420
 	50
 	51
+	52
 )
 
 package_linux-latest() {
