@@ -1,8 +1,8 @@
 # Maintainer: Jonathon Fernyhough <jonathon at_manjaro dot.org>
 
 pkgbase=linux-latest
-pkgver=5.3
-pkgrel=3
+pkgver=5.4
+pkgrel=2
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -41,6 +41,7 @@ eol=(
 	50
 	51
 	52
+	53
 )
 
 package_linux-latest() {
