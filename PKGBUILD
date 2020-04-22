@@ -1,7 +1,7 @@
 # Maintainer: Jonathon Fernyhough <jonathon at_manjaro dot.org>
 
 pkgbase=linux-latest
-pkgver=5.5
+pkgver=5.6
 pkgrel=1
 pkgname=(
 	"${pkgbase}"
@@ -39,6 +39,7 @@ eol=(
 	51
 	52
 	53
+	55
 )
 
 package_linux-latest() {
@@ -85,15 +86,6 @@ package_linux-latest-broadcom-wl(){
 	for kernel in "${eol[@]}"; do
 		replaces+=("linux${kernel}-broadcom-wl")
 		conflicts+=("linux${kernel}-broadcom-wl")
-	done
-}
-
-package_linux-latest-catalyst(){
-	pkgdesc="AMD/ATI Catalyst drivers for linux. fglrx kernel module only (metapackage)"
-	depends=("linux${_kernelver}-catalyst")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-catalyst")
-		conflicts+=("linux${kernel}-catalyst")
 	done
 }
 
@@ -162,14 +154,14 @@ package_linux-latest-nvidia-440xx(){
 	done
 }
 
-package_linux-latest-nvidiabl(){
-	pkgdesc="Driver to adjust display backlight on modern mobile NVidia graphics adapters (metapackage)"
-	depends=("linux${_kernelver}-nvidiabl")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidiabl")
-		conflicts+=("linux${kernel}-nvidiabl")
-	done
-}
+#package_linux-latest-nvidiabl(){
+#	pkgdesc="Driver to adjust display backlight on modern mobile NVidia graphics adapters (metapackage)"
+#	depends=("linux${_kernelver}-nvidiabl")
+#	for kernel in "${eol[@]}"; do
+#		replaces+=("linux${kernel}-nvidiabl")
+#		conflicts+=("linux${kernel}-nvidiabl")
+#	done
+#}
 
 package_linux-latest-r8168(){
 	pkgdesc="A kernel module for Realtek 8168 network cards (metapackage)"
@@ -180,14 +172,14 @@ package_linux-latest-r8168(){
 	done
 }
 
-package_linux-latest-rt3562sta(){
-	pkgdesc="Ralink RT3562 PCI WLAN adaptors kernel module (metapackage)"
-	depends=("linux${_kernelver}-rt3562sta")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-rt3562sta")
-		conflicts+=("linux${kernel}-rt3562sta")
-	done
-}
+#package_linux-latest-rt3562sta(){
+#	pkgdesc="Ralink RT3562 PCI WLAN adaptors kernel module (metapackage)"
+#	depends=("linux${_kernelver}-rt3562sta")
+#	for kernel in "${eol[@]}"; do
+#		replaces+=("linux${kernel}-rt3562sta")
+#		conflicts+=("linux${kernel}-rt3562sta")
+#	done
+#}
 
 package_linux-latest-rtl8723bu(){
 	pkgdesc="Realtek 8723bu network card kernel module (metapackage)"
