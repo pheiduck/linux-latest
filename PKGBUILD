@@ -15,7 +15,6 @@ pkgname=(
 	"${pkgbase}-nvidia-430xx"
 	"${pkgbase}-nvidia-435xx"
 	"${pkgbase}-nvidia-440xx"
-	"${pkgbase}-nvidiabl"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
@@ -154,15 +153,6 @@ package_linux-latest-nvidia-440xx(){
 	done
 }
 
-#package_linux-latest-nvidiabl(){
-#	pkgdesc="Driver to adjust display backlight on modern mobile NVidia graphics adapters (metapackage)"
-#	depends=("linux${_kernelver}-nvidiabl")
-#	for kernel in "${eol[@]}"; do
-#		replaces+=("linux${kernel}-nvidiabl")
-#		conflicts+=("linux${kernel}-nvidiabl")
-#	done
-#}
-
 package_linux-latest-r8168(){
 	pkgdesc="A kernel module for Realtek 8168 network cards (metapackage)"
 	depends=("linux${_kernelver}-r8168")
@@ -171,15 +161,6 @@ package_linux-latest-r8168(){
 		conflicts+=("linux${kernel}-r8168")
 	done
 }
-
-#package_linux-latest-rt3562sta(){
-#	pkgdesc="Ralink RT3562 PCI WLAN adaptors kernel module (metapackage)"
-#	depends=("linux${_kernelver}-rt3562sta")
-#	for kernel in "${eol[@]}"; do
-#		replaces+=("linux${kernel}-rt3562sta")
-#		conflicts+=("linux${kernel}-rt3562sta")
-#	done
-#}
 
 package_linux-latest-rtl8723bu(){
 	pkgdesc="Realtek 8723bu network card kernel module (metapackage)"
