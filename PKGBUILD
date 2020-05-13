@@ -2,7 +2,7 @@
 
 pkgbase=linux-latest
 pkgver=5.6
-pkgrel=2
+pkgrel=3
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
