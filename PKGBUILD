@@ -10,6 +10,7 @@ pkgname=(
 	"${pkgbase}-bbswitch"
 	"${pkgbase}-broadcom-wl"
 	"${pkgbase}-ndiswrapper"
+	"${pkgbase}-nvidia-340xx"
 	"${pkgbase}-nvidia-390xx"
 	"${pkgbase}-nvidia-418xx"
 	"${pkgbase}-nvidia-430xx"
