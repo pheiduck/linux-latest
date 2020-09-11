@@ -18,6 +18,7 @@ pkgname=(
 	"${pkgbase}-nvidia-430xx"
 	"${pkgbase}-nvidia-435xx"
 	"${pkgbase}-nvidia-440xx"
+	"${pkgbase}-nvidia-450xx"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
@@ -155,6 +156,15 @@ package_linux-latest-nvidia-440xx(){
 		replaces+=("linux${kernel}-nvidia-440xx")
 		conflicts+=("linux${kernel}-nvidia-440xx")
 	done
+}
+
+package_linux-latest-nvidia-450xx(){
+        pkgdesc="NVIDIA drivers for Linux (metapackage)"
+        depends=("linux${_kernelver}-nvidia-450xx")
+        for kernel in "${eol[@]}"; do
+                replaces+=("linux${kernel}-nvidia-450xx")
+                conflicts+=("linux${kernel}-nvidia-450xx")
+        done
 }
 
 package_linux-latest-r8168(){
