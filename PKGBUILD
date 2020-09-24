@@ -3,7 +3,7 @@
 # Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
 
 pkgbase=linux-latest
-pkgver=5.7
+pkgver=5.8
 pkgrel=2
 pkgname=(
 	"${pkgbase}"
@@ -11,8 +11,8 @@ pkgname=(
 	"${pkgbase}-acpi_call"
 	"${pkgbase}-bbswitch"
 	"${pkgbase}-broadcom-wl"
-	"${pkgbase}-ndiswrapper"
-	"${pkgbase}-nvidia-340xx"
+	#"${pkgbase}-ndiswrapper"
+	#"${pkgbase}-nvidia-340xx"
 	"${pkgbase}-nvidia-390xx"
 	"${pkgbase}-nvidia-418xx"
 	"${pkgbase}-nvidia-430xx"
