@@ -3,8 +3,8 @@
 # Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
 
 pkgbase=linux-latest
-pkgver=5.8
-pkgrel=3
+pkgver=5.9
+pkgrel=1
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
@@ -43,7 +43,6 @@ eol=(
 	53
 	55
 	56
-	57
 )
 
 package_linux-latest() {
