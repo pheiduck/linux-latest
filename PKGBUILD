@@ -3,16 +3,16 @@
 # Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
 
 pkgbase=linux-latest
-pkgver=5.9
-pkgrel=2
+pkgver=5.10
+pkgrel=1
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
 	"${pkgbase}-acpi_call"
 	"${pkgbase}-bbswitch"
 	"${pkgbase}-broadcom-wl"
-	"${pkgbase}-nvidia-450xx"
-	"${pkgbase}-nvidia-455xx"
+	"${pkgbase}-nvidia"
+	"${pkgbase}-nvidia-390xx"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
@@ -163,12 +163,12 @@ package_linux-latest-nvidia-450xx(){
         done
 }
 
-package_linux-latest-nvidia-455xx(){
+package_linux-latest-nvidia(){
         pkgdesc="NVIDIA drivers for Linux (metapackage)"
-        depends=("linux${_kernelver}-nvidia-455xx")
+        depends=("linux${_kernelver}-nvidia")
         for kernel in "${eol[@]}"; do
-                replaces+=("linux${kernel}-nvidia-455xx")
-                conflicts+=("linux${kernel}-nvidia-455xx")
+                replaces+=("linux${kernel}-nvidia")
+                conflicts+=("linux${kernel}-nvidia")
         done
 }
 
