@@ -1,9 +1,10 @@
+# Maintainer: Philip Heiduck <pheiduck[at]forum[dot]manjaro[dot]org>
 # Maintainer: Philip Müller <philm[at]manjaro[dot]org>
 # Maintainer: Bernhard Landauer <bernhard[at]manjaro[dot]org>
 # Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
 
 pkgbase=linux-latest
-pkgver=5.10
+pkgver=6.7
 pkgrel=1
 pkgname=(
 	"${pkgbase}"
@@ -12,6 +13,7 @@ pkgname=(
 	"${pkgbase}-bbswitch"
 	"${pkgbase}-broadcom-wl"
 	"${pkgbase}-nvidia"
+ 	"${pkgbase}-nvidia-470xx"
 	"${pkgbase}-nvidia-390xx"
 	"${pkgbase}-r8168"
 	"${pkgbase}-rtl8723bu"
@@ -98,15 +100,6 @@ package_linux-latest-ndiswrapper(){
 	done
 }
 
-package_linux-latest-nvidia-340xx(){
-	pkgdesc="Legacy NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-340xx")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-340xx")
-		conflicts+=("linux${kernel}-nvidia-340xx")
-	done
-}
-
 package_linux-latest-nvidia-390xx(){
 	pkgdesc="Legacy NVIDIA drivers for Linux (metapackage)"
 	depends=("linux${_kernelver}-nvidia-390xx")
@@ -116,50 +109,12 @@ package_linux-latest-nvidia-390xx(){
 	done
 }
 
-
-package_linux-latest-nvidia-418xx(){
-	pkgdesc="NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-418xx")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-418xx")
-		conflicts+=("linux${kernel}-nvidia-418xx")
-	done
-}
-
-package_linux-latest-nvidia-430xx(){
-	pkgdesc="NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-430xx")
-        replaces+=('linux-latest-nvidia')
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-430xx")
-		conflicts+=("linux${kernel}-nvidia-430xx")
-	done
-}
-
-package_linux-latest-nvidia-435xx(){
-	pkgdesc="NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-435xx")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-435xx")
-		conflicts+=("linux${kernel}-nvidia-435xx")
-	done
-}
-
-package_linux-latest-nvidia-440xx(){
-	pkgdesc="NVIDIA drivers for Linux (metapackage)"
-	depends=("linux${_kernelver}-nvidia-440xx")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-nvidia-440xx")
-		conflicts+=("linux${kernel}-nvidia-440xx")
-	done
-}
-
-package_linux-latest-nvidia-450xx(){
+package_linux-latest-nvidia-470xx(){
         pkgdesc="NVIDIA drivers for Linux (metapackage)"
-        depends=("linux${_kernelver}-nvidia-450xx")
+        depends=("linux${_kernelver}-nvidia-470xx")
         for kernel in "${eol[@]}"; do
-                replaces+=("linux${kernel}-nvidia-450xx")
-                conflicts+=("linux${kernel}-nvidia-450xx")
+                replaces+=("linux${kernel}-nvidia-470xx")
+                conflicts+=("linux${kernel}-nvidia-470xx")
         done
 }
 
@@ -234,5 +189,3 @@ package_linux-latest-zfs(){
 		conflicts+=("linux${kernel}-zfs")
 	done
 }
-
-
