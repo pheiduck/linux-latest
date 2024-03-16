@@ -92,7 +92,7 @@ jobs:
         uses: dev-drprasad/delete-older-releases@master
         with:
           ###### EDIT HERE ######
-          repo: pheiduck/curl-daily
+          repo: pheiduck/linux-latest
           #######################
           keep_latest: 1
           delete_tags: true
