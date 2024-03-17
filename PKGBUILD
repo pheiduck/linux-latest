@@ -19,7 +19,6 @@ pkgname=(
 	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
 	"${pkgbase}-vhba-module"
-	"${pkgbase}-virtualbox-guest-modules"
 	"${pkgbase}-virtualbox-host-modules"
 	"${pkgbase}-zfs"
 )
