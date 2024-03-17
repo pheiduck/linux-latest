@@ -4,7 +4,7 @@
 # Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
 
 pkgbase=linux-latest
-pkgver=6.7
+pkgver=6.8
 pkgrel=1
 pkgname=(
 	"${pkgbase}"
@@ -31,7 +31,9 @@ license=('GPL')
 _kernelver="${pkgver/\./}"
 
 # EOL kernels between last LTS and latest
-eol=()
+eol=(
+	67
+)
 
 package_linux-latest() {
 	pkgdesc="The latest kernel and modules (metapackage)"
