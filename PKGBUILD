@@ -5,7 +5,7 @@
 
 pkgbase=linux-latest
 pkgver=6.7
-pkgrel=1
+pkgrel=2
 pkgname=(
 	"${pkgbase}"
 	"${pkgbase}-headers"
