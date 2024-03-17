@@ -19,7 +19,6 @@ pkgname=(
 	"${pkgbase}-rtl8723bu"
 	"${pkgbase}-tp_smapi"
 	"${pkgbase}-vhba-module"
-	"${pkgbase}-virtualbox-guest-modules"
 	"${pkgbase}-virtualbox-host-modules"
 	"${pkgbase}-zfs"
 )
@@ -79,15 +78,6 @@ package_linux-latest-broadcom-wl(){
 	for kernel in "${eol[@]}"; do
 		replaces+=("linux${kernel}-broadcom-wl")
 		conflicts+=("linux${kernel}-broadcom-wl")
-	done
-}
-
-package_linux-latest-ndiswrapper(){
-	pkgdesc="Module for NDIS (Windows Network Drivers) drivers supplied by vendors (metapackage)"
-	depends=("linux${_kernelver}-ndiswrapper")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-ndiswrapper")
-		conflicts+=("linux${kernel}-ndiswrapper")
 	done
 }
 
@@ -151,15 +141,6 @@ package_linux-latest-vhba-module(){
 	for kernel in "${eol[@]}"; do
 		replaces+=("linux${kernel}-vhba-module")
 		conflicts+=("linux${kernel}-vhba-module")
-	done
-}
-
-package_linux-latest-virtualbox-guest-modules(){
-	pkgdesc="Guest kernel modules for VirtualBox (metapackage)"
-	depends=("linux${_kernelver}-virtualbox-guest-modules")
-	for kernel in "${eol[@]}"; do
-		replaces+=("linux${kernel}-virtualbox-guest-modules")
-		conflicts+=("linux${kernel}-virtualbox-guest-modules")
 	done
 }
 
