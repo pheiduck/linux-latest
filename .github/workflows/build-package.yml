@@ -2,7 +2,7 @@ name: 'Manjaro Package CI'
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   
 jobs:
   build_package:
