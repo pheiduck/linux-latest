@@ -84,12 +84,8 @@ jobs:
         with:
           path: /var/lib/chrootbuild
           key: ${{ runner.os }}-chrootbuild
-      - id: build_package_clean
-        if: steps.cache-chrootbuild.outputs.cache-hit != 'true'
-        run: |
-          sudo chrootbuild -cp ${{ matrix.package }}
       - id: build_package
-        if: steps.cache-chrootbuild.outputs.cache-hit == 'true'
+        if: ${{ steps.cache-chrootbuild.outputs.cache-hit != 'true' || 'true' }}
         run: |
           sudo chrootbuild -p ${{ matrix.package }}
       - id: publish_package
